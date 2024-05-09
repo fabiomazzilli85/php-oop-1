@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #262626;
+}
+
+h1 {
+    color: #ab170f;
+}
+
+.card-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-film {
+    background-color: white;
+    color: #ab170f;
+    padding: 40px;
+    border-radius: 4px;    
+}
