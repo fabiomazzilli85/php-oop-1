@@ -58,4 +58,14 @@ echo "Titolo: " . $production1->getTitolo() . "<br>";
 echo "Lingua: " . $production1->getLingua() . "<br>";
 echo "Voto: " . $production1->getVoto() . "<br>";
 
+$production2 = new Production("Il Padrino - parte II", "Inglese", 9);
+echo "Titolo: " . $production2->getTitolo() . "<br>";
+echo "Lingua: " . $production2->getLingua() . "<br>";
+echo "Voto: " . $production2->getVoto() . "<br>";
+
+$production3 = new Production("Il Padrino - parte III", "Inglese", 4);
+echo "Titolo: " . $production3->getTitolo() . "<br>";
+echo "Lingua: " . $production3->getLingua() . "<br>";
+echo "Voto: " . $production3->getVoto() . "<br>";
+
 ?>
