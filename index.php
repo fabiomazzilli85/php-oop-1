@@ -96,7 +96,9 @@ $production3 = new Production("Il Padrino - parte III", "Inglese", 4);
                     <h5 class="card-title text-center">Titolo: <?php echo $production1->getTitolo(); ?></h5>
                     <p class="card-text text-center">Lingua: <?php echo $production1->getLingua(); ?></p>
                     <p class="card-text text-center">Voto: <?php echo $production1->getVoto(); ?></p>
-                    <a href="www.amazon.it" class="btn btn-outline-danger">Acquista</a>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-outline-danger">Acquista</a>
+                    </div>
                 </div>
             </div>
 
@@ -106,7 +108,9 @@ $production3 = new Production("Il Padrino - parte III", "Inglese", 4);
                     <h5 class="card-title text-center">Titolo: <?php echo $production2->getTitolo(); ?></h5>
                     <p class="card-text text-center">Lingua: <?php echo $production2->getLingua(); ?></p>
                     <p class="card-text text-center">Voto: <?php echo $production2->getVoto(); ?></p>
-                    <a href="www.amazon.it" class="btn btn-outline-danger">Acquista</a>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-outline-danger">Acquista</a>
+                    </div>
                 </div>
             </div>
 
@@ -116,7 +120,9 @@ $production3 = new Production("Il Padrino - parte III", "Inglese", 4);
                     <h5 class="card-title text-center">Titolo: <?php echo $production3->getTitolo(); ?></h5>
                     <p class="card-text text-center">Lingua: <?php echo $production3->getLingua(); ?></p>
                     <p class="card-text text-center">Voto: <?php echo $production3->getVoto(); ?></p>
-                    <a href="www.amazon.it" class="btn btn-outline-danger">Acquista</a>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-outline-danger">Acquista</a>
+                    </div>
                 </div>
             </div>
         </div>
