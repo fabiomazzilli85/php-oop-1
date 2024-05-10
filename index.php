@@ -55,7 +55,6 @@ class Production
 }
 
 // Aggiungo la classe Movie che eredita da Production. A movie aggiungo due proprietà: ''profitti'' e ''durata''.
-
 class Movie extends Production
 {
     public $profitti;
@@ -82,22 +81,64 @@ class Movie extends Production
     }
 }
 
+// Ho creato la classe Serie che eredita le proprietà di Production, alle quali aggiungo 'Stagioni'.
+class Serie extends Production
+{
+    public $stagioni;
+
+    public function setStagioni($stagioni)
+    {
+        $this->stagioni = $stagioni;
+    }
+
+    public function getStagioni()
+    {
+        return $this->stagioni;
+    }
+}
+
+// Big Mouth
+$serie1 = new Serie("Big Mouth", "Inglese", 9);
+$serie1->setStagioni(7);
+
+"Titolo: " . $serie1->getTitolo() . "<br>";
+"Lingua: " . $serie1->getLingua() . "<br>";
+"Voto: " . $serie1->getVoto() . "<br>";
+"Stagioni: " . $serie1->getStagioni() . "<br>";
+
+// I Griffin
+$serie2 = new Serie("I Griffin", "Inglese", 8);
+$serie2->setStagioni(21);
+
+"Titolo: " . $serie2->getTitolo() . "<br>";
+"Lingua: " . $serie2->getLingua() . "<br>";
+"Voto: " . $serie2->getVoto() . "<br>";
+"Stagioni: " . $serie2->getStagioni() . "<br>";
+
+// Big Bang Theory
+$serie3 = new Serie("Big Bang Theory", "Inglese", 10);
+$serie3->setStagioni(12);
+
+"Titolo: " . $serie3->getTitolo() . "<br>";
+"Lingua: " . $serie3->getLingua() . "<br>";
+"Voto: " . $serie3->getVoto() . "<br>";
+"Stagioni: " . $serie3->getStagioni() . "<br>";
 
 // Esempio de ''Il Padrino''.
 $movie1 = new Movie("Il Padrino", "Inglese", 10);
-$movie1->setProfitti(20000000);
+$movie1->setProfitti('175 milioni di $');
 $movie1->setDurata(180);
 
 // Stampo ''Il Padrino''
 "Titolo: " . $movie1->getTitolo() . "<br>";
 "Lingua: " . $movie1->getLingua() . "<br>";
 "Voto: " . $movie1->getVoto() . "<br>";
-"Profitti: $" . $movie1->getProfitti() . "<br>";
+"Profitti: " . $movie1->getProfitti() . "<br>";
 "Durata: " . $movie1->getDurata() . " minuti<br>";
 
 // Esempio de ''Il Padrino - Parte II".
 $movie2 = new Movie("Il Padrino - Parte II", "Inglese", 10);
-$movie2->setProfitti(10000000);
+$movie2->setProfitti('135 milioni di $');
 $movie2->setDurata(200);
 
 
@@ -105,12 +146,12 @@ $movie2->setDurata(200);
 "Titolo: " . $movie2->getTitolo() . "<br>";
 "Lingua: " . $movie2->getLingua() . "<br>";
 "Voto: " . $movie2->getVoto() . "<br>";
-"Profitti: $" . $movie2->getProfitti() . "<br>";
+"Profitti: " . $movie2->getProfitti() . "<br>";
 "Durata: " . $movie2->getDurata() . " minuti<br>";
 
 // Esempio de ''Il Padrino - Parte III".
 $movie3 = new Movie("Il Padrino - Parte III", "Inglese", 4);
-$movie3->setProfitti(80000000);
+$movie3->setProfitti('80 milioni di $');
 $movie3->setDurata(220);
 
 
@@ -118,25 +159,8 @@ $movie3->setDurata(220);
 "Titolo: " . $movie3->getTitolo() . "<br>";
 "Lingua: " . $movie3->getLingua() . "<br>";
 "Voto: " . $movie3->getVoto() . "<br>";
-"Profitti: $" . $movie3->getProfitti() . "<br>";
+"Profitti: " . $movie3->getProfitti() . "<br>";
 "Durata: " . $movie3->getDurata() . " minuti<br>";
-
-
-$production1 = new Production("Il Padrino", "Inglese", 10);
-"Titolo: " . $production1->getTitolo() . "<br>";
-"Lingua: " . $production1->getLingua() . "<br>";
-"Voto: " . $production1->getVoto() . "<br>";
-
-$production2 = new Production("Il Padrino - parte II", "Inglese", 9);
-"Titolo: " . $production2->getTitolo() . "<br>";
-"Lingua: " . $production2->getLingua() . "<br>";
-"Voto: " . $production2->getVoto() . "<br>";
-
-$production3 = new Production("Il Padrino - parte III", "Inglese", 4);
-"Titolo: " . $production3->getTitolo() . "<br>";
-"Lingua: " . $production3->getLingua() . "<br>";
-"Voto: " . $production3->getVoto() . "<br>";
-
 ?>
 
 <!DOCTYPE html>
@@ -158,44 +182,87 @@ $production3 = new Production("Il Padrino - parte III", "Inglese", 4);
         <h1 class="text-center mt-5 mb-5">The Godfather Trilogy</h1>
 
         <div class="card-flex">
-            <div class="card" style="width: 18rem;">
+            <div class="card mt-5 mb-5" style="width: 18rem;">
                 <img src="./img/logo.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                <h5 class="card-title text-center">Titolo: <?php echo $movie1->getTitolo(); ?></h5>
+                    <h5 class="card-title text-center">Titolo: <?php echo $movie1->getTitolo(); ?></h5>
                     <p class="card-text text-center">Lingua: <?php echo $movie1->getLingua(); ?></p>
                     <p class="card-text text-center">Voto: <?php echo $movie1->getVoto(); ?></p>
-                    <p class="card-text text-center">Profitti: $<?php echo $movie1->getProfitti(); ?></p>
+                    <p class="card-text text-center">Profitti: <?php echo $movie1->getProfitti(); ?></p>
                     <p class="card-text text-center">Durata: <?php echo $movie1->getDurata(); ?> minuti</p>
                     <div class="text-center">
-                        <a href="#" class="btn btn-outline-danger">Acquista</a>
+                        <a href="#" class="btn btn-outline-danger">Netflix</a>
                     </div>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
+            <div class="card mt-5 mb-5" style="width: 18rem;">
                 <img src="./img/logo.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center">Titolo: <?php echo $movie2->getTitolo(); ?></h5>
                     <p class="card-text text-center">Lingua: <?php echo $movie2->getLingua(); ?></p>
                     <p class="card-text text-center">Voto: <?php echo $movie2->getVoto(); ?></p>
-                    <p class="card-text text-center">Profitti: $<?php echo $movie2->getProfitti(); ?></p>
+                    <p class="card-text text-center">Profitti: <?php echo $movie2->getProfitti(); ?></p>
                     <p class="card-text text-center">Durata: <?php echo $movie2->getDurata(); ?> minuti</p>
                     <div class="text-center">
-                        <a href="#" class="btn btn-outline-danger">Acquista</a>
+                        <a href="#" class="btn btn-outline-danger">Netflix</a>
                     </div>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
+            <div class="card mt-5 mb-5" style="width: 18rem;">
                 <img src="./img/logo.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                <h5 class="card-title text-center">Titolo: <?php echo $movie3->getTitolo(); ?></h5>
+                    <h5 class="card-title text-center">Titolo: <?php echo $movie3->getTitolo(); ?></h5>
                     <p class="card-text text-center">Lingua: <?php echo $movie3->getLingua(); ?></p>
                     <p class="card-text text-center">Voto: <?php echo $movie3->getVoto(); ?></p>
-                    <p class="card-text text-center">Profitti: $<?php echo $movie3->getProfitti(); ?></p>
+                    <p class="card-text text-center">Profitti: <?php echo $movie3->getProfitti(); ?></p>
                     <p class="card-text text-center">Durata: <?php echo $movie3->getDurata(); ?> minuti</p>
                     <div class="text-center">
-                        <a href="#" class="btn btn-outline-danger">Acquista</a>
+                        <a href="#" class="btn btn-outline-danger">Netflix</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-center text-white mt-5 mb-5">Le migliori Serie TV (secondo me)</h2>
+
+        <div class="card-flex">
+            <div class="card mt-5 mb-5" style="width: 18rem;">
+                <img src="./img/serie.jpg" class="card-img-top picture-size" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Titolo: <?php echo $serie1->getTitolo(); ?></h5>
+                    <p class="card-text text-center">Lingua: <?php echo $serie1->getLingua(); ?></p>
+                    <p class="card-text text-center">Voto: <?php echo $serie1->getVoto(); ?></p>
+                    <p class="card-text text-center">Stagioni: <?php echo $serie1->getStagioni(); ?></p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-outline-danger">Netflix</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-5 mb-5" style="width: 18rem;">
+                <img src="./img/serie.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Titolo: <?php echo $serie2->getTitolo(); ?></h5>
+                    <p class="card-text text-center">Lingua: <?php echo $serie2->getLingua(); ?></p>
+                    <p class="card-text text-center">Voto: <?php echo $serie2->getVoto(); ?></p>
+                    <p class="card-text text-center">Stagioni: <?php echo $serie2->getStagioni(); ?></p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-outline-danger">Netflix</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-5 mb-5" style="width: 18rem;">
+                <img src="./img/serie.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Titolo: <?php echo $serie3->getTitolo(); ?></h5>
+                    <p class="card-text text-center">Lingua: <?php echo $serie3->getLingua(); ?></p>
+                    <p class="card-text text-center">Voto: <?php echo $serie3->getVoto(); ?></p>
+                    <p class="card-text text-center">Stagioni: <?php echo $serie3->getStagioni(); ?></p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-outline-danger">Netflix</a>
                     </div>
                 </div>
             </div>
