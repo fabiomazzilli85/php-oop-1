@@ -54,6 +54,74 @@ class Production
     // Ottengo il voto del film.
 }
 
+// Aggiungo la classe Movie che eredita da Production. A movie aggiungo due proprietà: ''profitti'' e ''durata''.
+
+class Movie extends Production
+{
+    public $profitti;
+    public $durata;
+
+    public function setProfitti($profitti)
+    {
+        $this->profitti = $profitti;
+    }
+
+    public function getProfitti()
+    {
+        return $this->profitti;
+    }
+
+    public function setDurata($durata)
+    {
+        $this->durata = $durata;
+    }
+
+    public function getDurata()
+    {
+        return $this->durata;
+    }
+}
+
+
+// Esempio de ''Il Padrino''.
+$movie1 = new Movie("Il Padrino", "Inglese", 10);
+$movie1->setProfitti(20000000);
+$movie1->setDurata(180);
+
+// Stampo ''Il Padrino''
+"Titolo: " . $movie1->getTitolo() . "<br>";
+"Lingua: " . $movie1->getLingua() . "<br>";
+"Voto: " . $movie1->getVoto() . "<br>";
+"Profitti: $" . $movie1->getProfitti() . "<br>";
+"Durata: " . $movie1->getDurata() . " minuti<br>";
+
+// Esempio de ''Il Padrino - Parte II".
+$movie2 = new Movie("Il Padrino - Parte II", "Inglese", 10);
+$movie2->setProfitti(10000000);
+$movie2->setDurata(200);
+
+
+// Stampo ''Il Padrino - Parte II
+"Titolo: " . $movie2->getTitolo() . "<br>";
+"Lingua: " . $movie2->getLingua() . "<br>";
+"Voto: " . $movie2->getVoto() . "<br>";
+"Profitti: $" . $movie2->getProfitti() . "<br>";
+"Durata: " . $movie2->getDurata() . " minuti<br>";
+
+// Esempio de ''Il Padrino - Parte III".
+$movie3 = new Movie("Il Padrino - Parte III", "Inglese", 4);
+$movie3->setProfitti(80000000);
+$movie3->setDurata(220);
+
+
+// Stampo ''Il Padrino - Parte III''
+"Titolo: " . $movie3->getTitolo() . "<br>";
+"Lingua: " . $movie3->getLingua() . "<br>";
+"Voto: " . $movie3->getVoto() . "<br>";
+"Profitti: $" . $movie3->getProfitti() . "<br>";
+"Durata: " . $movie3->getDurata() . " minuti<br>";
+
+
 $production1 = new Production("Il Padrino", "Inglese", 10);
 "Titolo: " . $production1->getTitolo() . "<br>";
 "Lingua: " . $production1->getLingua() . "<br>";
@@ -93,9 +161,11 @@ $production3 = new Production("Il Padrino - parte III", "Inglese", 4);
             <div class="card" style="width: 18rem;">
                 <img src="./img/logo.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Titolo: <?php echo $production1->getTitolo(); ?></h5>
-                    <p class="card-text text-center">Lingua: <?php echo $production1->getLingua(); ?></p>
-                    <p class="card-text text-center">Voto: <?php echo $production1->getVoto(); ?></p>
+                <h5 class="card-title text-center">Titolo: <?php echo $movie1->getTitolo(); ?></h5>
+                    <p class="card-text text-center">Lingua: <?php echo $movie1->getLingua(); ?></p>
+                    <p class="card-text text-center">Voto: <?php echo $movie1->getVoto(); ?></p>
+                    <p class="card-text text-center">Profitti: $<?php echo $movie1->getProfitti(); ?></p>
+                    <p class="card-text text-center">Durata: <?php echo $movie1->getDurata(); ?> minuti</p>
                     <div class="text-center">
                         <a href="#" class="btn btn-outline-danger">Acquista</a>
                     </div>
@@ -105,9 +175,11 @@ $production3 = new Production("Il Padrino - parte III", "Inglese", 4);
             <div class="card" style="width: 18rem;">
                 <img src="./img/logo.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Titolo: <?php echo $production2->getTitolo(); ?></h5>
-                    <p class="card-text text-center">Lingua: <?php echo $production2->getLingua(); ?></p>
-                    <p class="card-text text-center">Voto: <?php echo $production2->getVoto(); ?></p>
+                    <h5 class="card-title text-center">Titolo: <?php echo $movie2->getTitolo(); ?></h5>
+                    <p class="card-text text-center">Lingua: <?php echo $movie2->getLingua(); ?></p>
+                    <p class="card-text text-center">Voto: <?php echo $movie2->getVoto(); ?></p>
+                    <p class="card-text text-center">Profitti: $<?php echo $movie2->getProfitti(); ?></p>
+                    <p class="card-text text-center">Durata: <?php echo $movie2->getDurata(); ?> minuti</p>
                     <div class="text-center">
                         <a href="#" class="btn btn-outline-danger">Acquista</a>
                     </div>
@@ -117,9 +189,11 @@ $production3 = new Production("Il Padrino - parte III", "Inglese", 4);
             <div class="card" style="width: 18rem;">
                 <img src="./img/logo.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Titolo: <?php echo $production3->getTitolo(); ?></h5>
-                    <p class="card-text text-center">Lingua: <?php echo $production3->getLingua(); ?></p>
-                    <p class="card-text text-center">Voto: <?php echo $production3->getVoto(); ?></p>
+                <h5 class="card-title text-center">Titolo: <?php echo $movie3->getTitolo(); ?></h5>
+                    <p class="card-text text-center">Lingua: <?php echo $movie3->getLingua(); ?></p>
+                    <p class="card-text text-center">Voto: <?php echo $movie3->getVoto(); ?></p>
+                    <p class="card-text text-center">Profitti: $<?php echo $movie3->getProfitti(); ?></p>
+                    <p class="card-text text-center">Durata: <?php echo $movie3->getDurata(); ?> minuti</p>
                     <div class="text-center">
                         <a href="#" class="btn btn-outline-danger">Acquista</a>
                     </div>
